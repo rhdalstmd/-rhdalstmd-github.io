@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경상북도 고령군 코로나19 검사현황</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    button { margin-top: 20px; padding: 10px 15px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>경상북도 고령군 코로나19 검사현황</h1>
+  <button onclick="fetchData()">데이터 불러오기</button>
+  <button onclick="downloadCSV()">CSV 저장</button>
+  <div id="table-container"></div>
+
+  <script>
+    const API_URL = "https://api.odcloud.kr/api/15065039/v1/uddi:50586d19-36a2-4b44-9764-9b6f80965c78";
+    const API_KEY = "38b1c04a33e639a7e857962385f4ee366eb6287d91c8823217c6e611ba736493";
+    let globalData = [];
+
+    async function fetchData() {
+      try {
+        const res = await fetch(`${API_URL}?page=1&perPage=100&serviceKey=${API_KEY}&returnType=JSON`);
+        if (!res.ok) throw new Error("API 요청 실패");
+        const json = await res.json();
+        globalData = json.data;
+        renderTable(globalData);
+      } catch (err) {
+        alert("데이터 불러오기 오류: " + err.message);
+      }
+    }
+
+    function renderTable(data) {
+      if (!data || data.length === 0) {
+        document.getElementById("table-container").innerHTML = "<p>데이터 없음</p>";
+        return;
+      }
+      let html = "<table><thead><tr>";
+      Object.keys(data[0]).forEach(key => {
+        html += `<th>${key}</th>`;
+      });
+      html += "</tr></thead><tbody>";
+      data.forEach(row => {
+        html += "<tr>";
+        Object.values(row).forEach(val => {
+          html += `<td>${val}</td>`;
+        });
+        html += "</tr>";
+      });
+      html += "</tbody></table>";
+      document.getElementById("table-container").innerHTML = html;
+    }
+
+    function downloadCSV() {
+      if (!globalData.length) {
+        alert("먼저 데이터를 불러오세요!");
+        return;
+      }
+      const keys = Object.keys(globalData[0]);
+      const rows = globalData.map(obj => keys.map(k => `"${obj[k] || ""}"`).join(","));
+      const csvContent = [keys.join(","), ...rows].join("\n");
+
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "goryeong_covid19.csv";
+      link.click();
+    }
+  </script>
+</body>
+</html>
