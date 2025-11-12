@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>삼진어묵</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+    :root{
+      --accent:#ff7a00;
+      --accent-2:#ffd6a5;
+      --glass: rgba(255,255,255,0.06);
+      --max-width:1100px;
+      --radius:16px;}
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Nanum Gothic', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #0b1b2a 60%);
+      color:#fff;
+      line-height:1.4;
+      padding:40px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;}
+
+    .hero{
+      width:100%;
+      max-width:var(--max-width);
+      background:#fff;
+      color:#333;
+      border-radius:20px;
+      padding:40px;
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(3,6,12,0.3);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;}
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding-right:10px;
+      margin-bottom: 50px;}
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:18px;}
+    .brand-title{
+      font-size:14px;
+      opacity:0.95;}  
+
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;}
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;}
+
+    h1{
+      font-family: 'Playfair Display', serif;
+      font-size:34px;
+      margin:0 0 16px 0;
+      line-height:1.1;
+      color:#222;}
+    p.lead{
+      margin:0 0 24px 0;
+      font-size:20px;
+      color:#555;
+      max-width:56ch;}
+    .cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;}
+
+    .btn{
+      border:0;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+    .btn-primary{
+      background: linear-gradient(90deg,var(--accent), #ffb46b);
+      color:#fff;}
+    .btn-ghost{
+      background:transparent;
+      border:1px solid #ccc;
+      color:#333;}
+    .btn:hover{ transform: translateY(-3px); }
+
+    .intro-img{
+      margin-top:20px;
+      width:100%;
+      max-width:700px;
+      border-radius:20px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.25);
+      position:relative;
+      top:40px;
+      left:52%;
+      transform:translateX(-50%);
+      z-index:1;}
+
+    @media (max-width:900px){
+      .hero{ grid-template-columns:1fr; padding:28px; gap:18px }
+      .intro-img{ max-width:100%; }}
+  </style>
+</head>
+
+<body>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+  <section class="hero" data-role="page" aria-label="회사 소개" id="hero">
+    <div class="hero-content">
+      <div class="brand">
+        <div class="logo"><img src="samjin.png" alt="삼진어묵 로고"></div>
+        <div class="brand-title">삼진어묵, 시대를 담아내다</div>
+      </div>
+
+      <h1>삼진어묵은 과거에도,<br>현재도 여러분과 함께하고 있습니다.</h1>
+      <p class="lead">삼진어묵은 건강한 수산단백질의 대표적인 식품인 어묵을 가지고<br>전 세계로 사업 영역을 넓혀 미래 성장 동력을 확보해 갈 것입니다.</p>
+
+      <div class="cta">
+        <a href="#company" class="btn btn-primary" data-role="button">회사 소개</a>
+        <a href="#youtube" class="btn btn-primary" data-role="button">홍보 영상</a><br>
+        <a href="#best" class="btn btn-primary" data-role="button">베스트상품</a>
+        <a href="#experience" class="btn btn-primary" data-role="button">체험관</a>
+      </div>
+
+      <img src="samjinintro.jpg" alt="삼진어묵 소개 이미지" class="intro-img">
+    </div>
+
+      <!-- 회사 정보 영역 -->
+    <footer style="background:#ffffff; text-align:center; color:#555; padding:25px 10px; border-top:1px solid #e0e0e0; font-size:13px; line-height:1.6;">
+      <p style="font-weight:bold; color:#333; font-size:15px; margin-bottom:8px;">삼진식품㈜</p>
+      <p style="margin:4px 0;">부산광역시 영도구 태종로99번길 36 </p>
+      <p style="margin:4px 0;">전화: 051-412-5468 | 팩스: 051-980-5468 </p>
+      <p style="margin:4px 0;">메일 : samjinorder@daum.net </p>
+      <p style="margin:4px 0;">사업자등록번호 : 360-86-00207 </p>
+      <p style="margin:4px 0;">통신판매업신고번호 : 제2016-부산영도-00107호 </p>
+    </footer>
+  </section>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<section data-role="page" id="company">
+  <div data-role="header">
+    <h1>회사 소개</h1>
+  </div>
+
+  <div role="main" class="ui-content" style="background:#faf9f7; text-align:center; padding:30px 15px;">
+    <h2 style="margin-top:10px; font-weight:bold; font-size: large; margin-bottom: 25px;">인사말씀</h2>
+    <p style="color:#555; max-width:800px; margin:0 auto 30px; line-height:1.7;">
+      삼진식품의 어묵 브랜드, 삼진어묵은 1953년부터 3대째 이어 온 대한민국 대표 어묵 브랜드입니다.<br>2013년 12월, 국내 최초로 시작한 어묵베이커리 사업을 시작으로 어묵산업의 패러다임을 바꾸어 가고 있습니다.<br>
+      R&D에도 지속적으로 투자를 확대하여 신제품 개발에 몰두하고 있으며, 최근 물류 자동화 시스템을 도입해 '스마트 물류'를 구축 하였습니다.<br>삼진어묵은 4차 산업 혁명 시대에 발맞춰 스마트 팩토리 구축을 위해 지속적으로 투자해 나갈 것입니다.<br>
+      바른 먹거리를 통해 협력사는 물론 최종 소비자에게 더 높은 가치의 제품과 서비스를 제공하는 기업, 삼진식품의 성장을 지켜봐 주십시오.
+    </p>
+
+    <img src="story.jpg" alt="삼진어묵 본사 또는 역사관 이미지" 
+         style="width:100%; max-width:700px; border-radius:20px; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
+
+    <a href="#hero" data-role="button" data-theme="b" style="margin:30px auto 50px; max-width:80%;">메인으로 돌아가기</a>
+  </div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<section data-role="page" id="youtube">
+  <div data-role="header">
+    <h1>삼진어묵 소개 영상</h1>
+  </div>
+
+  <div role="main" class="ui-content" style="background:#faf9f7; text-align:center; padding:24px;">
+    <h2 style="margin-top:6px; font-weight:bold; margin-bottom:18px;">삼진어묵 소개 영상</h2>
+    <p style="color:#666; margin-bottom:22px; max-width:820px; margin-left:auto; margin-right:auto;">
+      삼진어묵의 브랜드를 소개하는 영상입니다.
+    </p>
+
+    <style>
+      /* 반응형 유튜브(16:9) */
+      .video-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+        gap:20px;
+        max-width:1100px;
+        margin:0 auto;
+        align-items:start;
+      }
+      .video-card{
+        background:#fff;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 6px 20px rgba(0,0,0,0.06);
+        text-align:left;
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+      .video-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 10px 24px rgba(0,0,0,0.12);
+      }
+      .video-thumb{
+        width:100%;
+        aspect-ratio:16/9;
+        object-fit:cover;
+        cursor:pointer;
+      }
+      .video-meta{ padding:14px; }
+      .video-meta h3{ margin:0 0 6px 0; font-size:16px; color:#222; }
+      .video-meta p{ margin:0; color:#666; font-size:14px; line-height:1.45; }
+      @media (max-width:480px){
+        .video-meta h3{ font-size:15px; }
+        .video-meta p{ font-size:13px; }
+      }
+    </style>
+
+    <div class="video-grid">
+
+      <div class="video-card" aria-label="삼진어묵 소개 영상">
+        <a href="https://www.youtube.com/watch?v=490Y2iBK2EE" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/490Y2iBK2EE/hqdefault.jpg" alt="삼진어묵 소개 영상 썸네일" class="video-thumb">
+        </a>
+        <div class="video-meta">
+          <h3>삼진어묵 소개 영상</h3>
+          <p>전통과 진화의 새로운 어묵 시장을 만들어갑니다.</p>
+        </div>
+      </div>
+      <div class="video-card" aria-label="삼진어묵 공장 영상">
+        <a href="https://www.youtube.com/watch?v=0l1DCH7GO9g" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/0l1DCH7GO9g/hqdefault.jpg" alt="삼진어묵 공장 영상 썸네일" class="video-thumb">
+        </a>
+        <div class="video-meta">
+          <h3>삼진어묵 2공장 핫바 대량 생산 공정</h3>
+          <p>어묵핫바, 어묵고로케 등 다양한 제품을 생산하는 부산 암남동 삼진어묵 공장</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#hero" data-role="button" data-transition="none" data-theme="b" style="margin:30px auto 50px; max-width:80%;">메인으로 돌아가기</a>
+  </div>
+
+</section>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+  <section data-role="page" id="best">
+    <div data-role="header">
+      <h1>베스트상품</h1>
+    </div>
+
+    <div role="main" class="ui-content" style="background:#faf9f7; text-align:center;">
+      <h2 style="margin-top:10px; font-weight:bold; font-size: large; margin-bottom: 35px;">삼진어묵의 베스트상품을 만나보세요</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:1100px; margin:0 auto;">
+        
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="1.jpg" alt="삼진프리미엄세트 1호" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">삼진프리미엄세트 1호</h3>
+            <p style="margin:6px 0 12px; color:#555;">[리뉴얼] 삼진어묵 베스트 선물세트</p>
+            <p style="color:#b40000; font-weight:bold;">55,000원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="2.jpg" alt="삼진프리미엄세트 2호" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">삼진프리미엄세트 2호</h3>
+            <p style="margin:6px 0 12px; color:#555;">[리뉴얼] 삼진어묵 베스트 선물세트</p>
+            <p style="color:#b40000; font-weight:bold;">70,000원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="3.jpg" alt="1953세트 1호" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">1953세트 1호</h3>
+            <p style="margin:6px 0 12px; color:#555;">[추천] 삼진어묵의 전통 선물세트</p>
+            <p style="color:#b40000; font-weight:bold;">35,000원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="4.jpg" alt="1953세트 2호" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">1953세트 2호</h3>
+            <p style="margin:6px 0 12px; color:#555;">[추천] 삼진어묵의 전통 선물세트</p>
+            <p style="color:#b40000; font-weight:bold;">45,000원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="5.jpg" alt="NEW꼬치사각(1016g)" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">NEW꼬치사각(1016g)</h3>
+            <p style="margin:6px 0 12px; color:#555;">연육 함량이 높아 잘 불지 않고 맛있는</p>
+            <p style="color:#b40000; font-weight:bold;">14,400원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="6.jpg" alt="알찬모듬어묵" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">알찬모듬어묵</h3>
+            <p style="margin:6px 0 12px; color:#555;">어린시절 시장에 갔을 때 맛 보았던 따끈따끈한 어묵의 추억</p>
+            <p style="color:#b40000; font-weight:bold;">27,900원</p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="7.jpg" alt="실속모듬어묵" style="width:100%; height:180px; object-fit:cover;">
+          <div style="padding:16px;">
+            <h3 style="margin:0;">실속모듬어묵</h3>
+            <p style="margin:6px 0 12px; color:#555;">시장에서 맛 보았던 추억의 어묵 모듬</p>
+            <p style="color:#b40000; font-weight:bold;">27,900원</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 베스트상품 페이지 하단 버튼 영역 -->
+      <div style="margin:40px auto; max-width:250px; display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.samjinfood.com/goods/best.php" target="_blank" data-role="button" data-theme="a">공식몰 베스트상품 보기</a>
+      </div>
+
+      <a href="#hero" data-role="button" data-theme="b" style="margin:30px auto 50px; max-width:80%;">메인으로 돌아가기</a>
+    </div>
+  </section>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<section data-role="page" id="experience">
+  <div data-role="header">
+    <h1>삼진어묵 체험관</h1>
+  </div>
+
+  <div role="main" class="ui-content" style="background:#faf9f7; text-align:center; padding:0;">
+    <div style="position:relative;">
+      <img src="experience1.jpg" alt="체험관" style="width:100%; max-height:420px; object-fit:cover;">
+    </div>
+    <div style="background:#f6f6f6; padding:40px 20px;">
+      <img src="experience2.jpg" alt="체험관 운영시간 안내" style="width:100%; max-width:900px; border-radius:10px;">
+    </div>
+    <div style="padding:40px 20px; background:#fff;">
+      <img src="experience3.jpg" alt="체험신청 안내" style="width:100%; max-width:900px; border-radius:10px;">
+    </div>
+
+    <div style="margin:40px auto; max-width:200px; display:flex; flex-direction:column; gap:10px;">
+      <a href="#experience-gallery" data-role="button" data-theme="a">체험관 갤러리</a>
+    </div>
+    <a href="#hero" data-role="button" data-theme="b" style="margin:30px auto 50px; max-width:80%;">메인으로 돌아가기</a>
+  </div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<section data-role="page" id="experience-gallery">
+  <div data-role="header">
+    <h1>체험관 갤러리</h1>
+  </div>
+
+  <div role="main" class="ui-content" style="background:#faf9f7; text-align:center; padding:20px;">
+    <h2 style="margin-bottom:20px;">삼진어묵 체험관 갤러리</h2>
+    <p style="color:#666; margin-bottom:30px;">체험관의 다양한 모습을 사진으로 만나보세요.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+                gap:15px; max-width:1000px; margin:0 auto;">
+      <img src="experience gallery1.jpg" alt="체험관 내부 사진 1" style="width:100%; border-radius:10px;">
+      <img src="experience gallery2.jpg" alt="체험관 내부 사진 2" style="width:100%; border-radius:10px;">
+      <img src="experience gallery3.jpg" alt="체험관 내부 사진 3" style="width:100%; border-radius:10px;">
+      <img src="experience gallery4.jpg" alt="체험관 내부 사진 3" style="width:100%; border-radius:10px;">
+      <img src="experience gallery5.jpg" alt="체험관 내부 사진 3" style="width:100%; border-radius:10px;">
+      <img src="experience gallery6.jpg" alt="체험관 내부 사진 3" style="width:100%; border-radius:10px;">
+    </div>
+
+    <a href="#experience" data-role="button" data-theme="b" style="margin:30px auto 50px; max-width:80%;">이전으로 돌아가기</a>
+  </div>
+</section>
+</body>
+</html>
